@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialves-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:20:01 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/24 22:52:55 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/25 18:38:05 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ unsigned long int Span::shortestSpan()
 {
 	int minValue = INT_MAX;
 	for (std::vector<int>::iterator it = this->myVector.begin(); it != this->myVector.end(); it++)
-		for (std::vector<int>::iterator at = this->myVector.begin(); at != this->myVector.end(); at++) // testar a começar em minValue
+		for (std::vector<int>::iterator at = this->myVector.begin(); at != this->myVector.end(); at++)
 			if (*it > *at && (*it - *at ) < minValue)
 				minValue = *it - *at;
 	return (unsigned long int)minValue;
@@ -57,22 +57,38 @@ unsigned long int Span::shortestSpan()
 
 unsigned long int Span::longestSpan()
 {
-	int minValue = INT_MIN;
+	int maxValue = INT_MIN;
 	for (std::vector<int>::iterator it = this->myVector.begin(); it != this->myVector.end(); it++)
-		for (std::vector<int>::iterator at = this->myVector.begin(); at != this->myVector.end(); at++) // testar a começar em minValue
-			if (*it > *at && (*it - *at ) > minValue)
-				minValue = *it - *at;
-	return (unsigned long int)minValue;
+		for (std::vector<int>::iterator at = this->myVector.begin(); at != this->myVector.end(); at++)
+			if (*it > *at && (*it - *at ) > maxValue)
+				maxValue = *it - *at;
+	return (unsigned long int)maxValue;
 }
 
-int RandomNumber ()
+int randomNumber (unsigned long int limit)
 {
-	return (std::rand()%100);
+	return (std::rand() % limit);
+}
+
+bool uniqueValue(int value, std::vector<int> v)
+{
+	for (std::vector<int>::iterator it = v.begin(); it != v.end(); it++)
+		if (*it == value)
+			return true;
+	return false;
 }
 
 void Span::fillRange()
 {
-	std::generate (this->myVector.begin(), this->myVector.end(), RandomNumber);
+	int num;
+	unsigned long limit;
+	limit = _n * 5;
+	do {
+		do {
+			num = randomNumber(limit);
+		} while (uniqueValue(num, this->myVector));
+		this->myVector.push_back(num);
+	} while (this->myVector.size() < _n);
 }
 
 void Span::printRange()
