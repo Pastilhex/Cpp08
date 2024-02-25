@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:19:54 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/25 18:23:27 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/25 20:08:00 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 class Span {
 private:
 	unsigned int _n;
-	std::vector<int> myVector;
+	std::vector<int> _myVector;
 public:
 	Span();
 	Span(int nbr);
@@ -36,7 +36,9 @@ public:
 	unsigned long int longestSpan();
 	void fillRange();
 	void printRange();
+	std::vector<int> vget() const;
 };
 
+std::ostream& operator<<(std::ostream& out, const Span& v);
 
 #endif
