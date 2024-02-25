@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialves-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 13:03:02 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/24 14:51:28 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/25 16:41:23 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@
 
 template<typename T>
 int easyfind(T myVector, int value);
-
 
 #endif
