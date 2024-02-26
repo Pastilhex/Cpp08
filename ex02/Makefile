@@ -7,16 +7,16 @@ FLAGSCXX = -Wall -Werror -Wextra -g -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(FLAGSCXX) $(OBJ) -o $(NAME)
+	$(CXX) $(FLAGS) $(OBJ) -o $(NAME)
 
-%o: %.cpp
-	$(CXX) $(FLAGSXX) -c $^ -o $@
+%.o: %.cpp
+	$(CXX) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(NAME)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(OBJ)
+	rm -f $(NAME)
 
 re: fclean all
 

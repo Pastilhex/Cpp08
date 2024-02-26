@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 05:32:16 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/26 19:57:33 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:18:35 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,6 @@ public:
 	~MutantStack();
 	MutantStack(const MutantStack&);
 	MutantStack& operator=(const MutantStack&);
-
-	// Stack member functions
-	// bool    empty();
-	// size_t  size();
-	// T      	top();
-	// void    push(T v);
-	// void    emplace(T v);
-	// void    pop();
-	// void    swap();
 
 	// Iterator member functions
 	typedef typename std::deque<T>::iterator				iterator;

@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 05:31:13 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/26 20:00:03 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:28:41 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,48 +81,3 @@ typename std::deque<T>::const_reverse_iterator MutantStack<T>::crend()
 {
     return _value.crend();
 }
-
-// template<typename T>
-// bool MutantStack<T>::empty()
-// {
-//     return _value.empty();
-// }
-
-
-// template<typename T>
-// size_t  MutantStack<T>::size()
-// {
-// 	return _value.size();
-// }
-
-// template<typename T>
-// T      MutantStack<T>::top()
-// {
-//     if (!_value.empty())
-//         return _value.back();
-// 	return 0;
-// }
-
-// template<typename T>
-// void    MutantStack<T>::push(T v)
-// {
-// 	_value.push_back(v);
-// }
-
-// template<typename T>
-// void    MutantStack<T>::emplace(T v)
-// {
-// 	_value.push_back(v);
-// }
-
-// template<typename T>
-// void    MutantStack<T>::pop()
-// {
-// 	_value.pop_back();
-// }
-
-// template<typename T>
-// void    MutantStack<T>::swap()
-// {
-// 	_value.swap();
-// }
