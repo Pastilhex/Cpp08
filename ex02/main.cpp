@@ -6,19 +6,17 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 05:30:51 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/26 20:27:13 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:38:41 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-#include "MutantStack.tpp"
 
 int main() {
 	
 	MutantStack<int> myStack;
 	MutantStack<int> otherStack;
 
-	
 	(myStack.empty()) ? std::cout << "empty: true" << std::endl : std::cout << "empty: false" << std::endl;
 
 	myStack.push(1);
