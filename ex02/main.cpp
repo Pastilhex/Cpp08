@@ -3,19 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 05:30:51 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/26 20:38:41 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/27 06:55:07 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 
 int main() {
-	
-	MutantStack<int> myStack;
-	MutantStack<int> otherStack;
+
+	MutantStack<int>	myStack;
+	MutantStack<int>	otherStack(myStack);
+
+	(otherStack.empty()) ? std::cout << "empty: true" << std::endl : std::cout << "empty: false" << std::endl;
+
+	otherStack.push(1);
+	otherStack.push(2);
+	otherStack.push(3);
+
+	std::cout << "The top element is: " << otherStack.top() << std::endl;
+
+	(otherStack.empty()) ? std::cout << "empty: true" << std::endl : std::cout << "empty: false" << std::endl;
+
+	otherStack.push(4);
+	otherStack.push(5);
+	otherStack.push(6);
+
+	std::cout << "The top element is: " << otherStack.top() << std::endl;
 
 	(myStack.empty()) ? std::cout << "empty: true" << std::endl : std::cout << "empty: false" << std::endl;
 
@@ -51,5 +67,6 @@ int main() {
 	
 	std::stack<int> s(myStack);
 
+	
     return 0;
 }

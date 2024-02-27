@@ -1,16 +1,16 @@
 NAME = mutantstack
-SRC = main.cpp MutantStack.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-FLAGS = -Wall -Werror -Wextra -g -std=c++98
+FLAGSCXX = -Wall -Werror -Wextra -g -std=c++98
 
-all:	$(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(FLAGSCXX) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CXX) $(FLAGS) -c $< -o $@
+	$(CXX) $(FLAGSCXX)  -o $@ -c $<
 
 clean:
 	rm -f $(OBJ)
