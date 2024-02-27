@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 05:30:51 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/27 06:55:07 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/27 07:03:29 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int main() {
 	}
 	
 	std::stack<int> s(myStack);
-
 	
     return 0;
 }
