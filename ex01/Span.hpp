@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef _SPAN_
-# define _SPAN_
+#define _SPAN_
 
 #include <iostream>
 #include <vector>
@@ -21,24 +21,26 @@
 #include <cstdlib>
 #include <ctime>
 
-class Span {
+class Span
+{
 private:
 	unsigned int _n;
 	std::vector<int> _myVector;
+
 public:
 	Span();
 	Span(int nbr);
-	Span(const Span&);
+	Span(const Span &);
+	Span &operator=(const Span &);
 	~Span();
-	Span& operator=(const Span&);
+
 	void addNumber(unsigned int n);
 	unsigned long int shortestSpan();
 	unsigned long int longestSpan();
 	void fillRange();
-	void printRange();
 	std::vector<int> vget() const;
 };
 
-std::ostream& operator<<(std::ostream& out, const Span& v);
+std::ostream &operator<<(std::ostream &out, const Span &v);
 
 #endif

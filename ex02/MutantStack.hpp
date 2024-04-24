@@ -11,31 +11,26 @@
 /* ************************************************************************** */
 
 #ifndef _MUTANTSTACK_
-# define _MUTANTSTACK_
+#define _MUTANTSTACK_
 
 #include <iostream>
-# include <stack>
-# include <vector>
-# include <list>
+#include <stack>
+#include <vector>
+#include <list>
 
 template <typename T>
-class MutantStack : public std::stack<T> 
+class MutantStack : public std::stack<T>
 {
 public:
-	MutantStack( void ) : std::stack<T>() {};
-
-	~MutantStack( void ) {};
-
-	MutantStack(const MutantStack& original) : std::stack<T>(original)
-	{
-	};
-
-	MutantStack& operator=(const MutantStack& obj)
+	MutantStack(void) : std::stack<T>(){};
+	MutantStack(const MutantStack &original) : std::stack<T>(original){};
+	MutantStack &operator=(const MutantStack &obj)
 	{
 		if (this != &obj)
 			*this = obj;
 		return *this;
 	};
+	~MutantStack(void){};
 
 	typedef typename std::stack<T>::container_type::iterator iterator;
 	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
@@ -81,7 +76,6 @@ public:
 	{
 		return (std::stack<T>::c.rend());
 	}
-
 };
 
 #endif

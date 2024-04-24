@@ -11,18 +11,47 @@
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
-#include "easyfind.cpp"
 
-int main() {
+int main()
+{
+	try
+	{
+		std::vector<int> myVector;
+		int values[] = {1, 3, 5, 7, 2, 4, 6};
+		const int size = sizeof(values) / sizeof(values[0]);
+		myVector.assign(values, values + size);
+		std::cout << easyfind(myVector, 2) << std::endl;
+	}
+	catch (const std::out_of_range &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	std::vector<int> myVector;
-	int values[] = {1, 3, 5, 7, 2, 4, 6};
-	const int size = sizeof(values) / sizeof(values[0]);
-	myVector.assign(values, values + size);
+	try
+	{
+		std::list<int> myList;
+		int values[] = {1, 3, 5, 7, 2, 4, 6};
+		const int size = sizeof(values) / sizeof(values[0]);
+		myList.assign(values, values + size);
+		std::cout << easyfind(myList, 0) << std::endl;
+	}
+	catch (const std::out_of_range &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	(easyfind(myVector, 4) >= 0) ? std::cout << easyfind(myVector, 4) << std::endl : std::cout << "Error: Value not found" << std::endl;
-	(easyfind(myVector, 18) >= 0) ? std::cout << easyfind(myVector, 18) << std::endl : std::cout << "Error: Value not found" << std::endl;
-	(easyfind(myVector, 2) >= 0) ? std::cout << easyfind(myVector, 2) << std::endl : std::cout << "Error: Value not found" << std::endl;
+	try
+	{
+		std::deque<int> myDeque;
+		int values[] = {1, 3, 5, 7, 2, 4, 6};
+		const int size = sizeof(values) / sizeof(values[0]);
+		myDeque.assign(values, values + size);
+		std::cout << easyfind(myDeque, 5) << std::endl;
+	}
+	catch (const std::out_of_range &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
 	return 0;
 }

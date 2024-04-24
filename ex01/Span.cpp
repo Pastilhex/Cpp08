@@ -16,12 +16,12 @@ Span::Span() {}
 
 Span::Span(int nbr) : _n(nbr), _myVector() {}
 
-Span::Span(const Span& original)
+Span::Span(const Span &original)
 {
 	*this = original;
 }
 
-Span& Span::operator=(const Span& obj) 
+Span &Span::operator=(const Span &obj)
 {
 	if (this != &obj)
 		*this = obj;
@@ -30,16 +30,16 @@ Span& Span::operator=(const Span& obj)
 
 Span::~Span() {}
 
-void Span::addNumber(unsigned int n) 
+void Span::addNumber(unsigned int n)
 {
-	try 
+	try
 	{
 		if (_myVector.size() < _n)
 			_myVector.push_back(n);
 		else
 			throw std::runtime_error("Vector out of limit!");
 	}
-	catch (const std::exception& e)
+	catch (const std::exception &e)
 	{
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
@@ -50,7 +50,7 @@ unsigned long int Span::shortestSpan()
 	int minValue = INT_MAX;
 	for (std::vector<int>::iterator it = this->_myVector.begin(); it != this->_myVector.end(); it++)
 		for (std::vector<int>::iterator at = this->_myVector.begin(); at != this->_myVector.end(); at++)
-			if (*it > *at && (*it - *at ) < minValue)
+			if (*it > *at && (*it - *at) < minValue)
 				minValue = *it - *at;
 	return (unsigned long int)minValue;
 }
@@ -60,12 +60,12 @@ unsigned long int Span::longestSpan()
 	int maxValue = INT_MIN;
 	for (std::vector<int>::iterator it = this->_myVector.begin(); it != this->_myVector.end(); it++)
 		for (std::vector<int>::iterator at = this->_myVector.begin(); at != this->_myVector.end(); at++)
-			if (*it > *at && (*it - *at ) > maxValue)
+			if (*it > *at && (*it - *at) > maxValue)
 				maxValue = *it - *at;
 	return (unsigned long int)maxValue;
 }
 
-int randomNumber (unsigned long int limit)
+int randomNumber(unsigned long int limit)
 {
 	return (std::rand() % limit);
 }
@@ -83,8 +83,10 @@ void Span::fillRange()
 	int num;
 	unsigned long limit;
 	limit = _n * 5;
-	do {
-		do {
+	do
+	{
+		do
+		{
 			num = randomNumber(limit);
 		} while (uniqueValue(num, this->_myVector));
 		this->_myVector.push_back(num);
@@ -96,7 +98,7 @@ std::vector<int> Span::vget() const
 	return _myVector;
 }
 
-std::ostream& operator<<(std::ostream& out, const Span& v)
+std::ostream &operator<<(std::ostream &out, const Span &v)
 {
 	std::vector<int> myVector = v.vget();
 	for (std::vector<int>::iterator it = myVector.begin(); it != myVector.end(); it++)

@@ -11,15 +11,25 @@
 /* ************************************************************************** */
 
 #ifndef _EASY_
-# define _EASY_
+#define _EASY_
 
 #include <iostream>
 #include <algorithm>
 #include <vector>
 #include <list>
 #include <deque>
+#include <iterator>
+#include <exception>
 
-template<typename T>
-int easyfind(T myVector, int value);
+template <typename T>
+int easyfind(T myContainer, int value)
+{
+	typename T::const_iterator it = find(myContainer.begin(), myContainer.end(), value);
+	if (*it == value)
+		return *it;
+	else
+		throw(std::out_of_range("Value not found"));
+	return 0;
+}
 
 #endif

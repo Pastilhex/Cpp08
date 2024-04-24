@@ -12,10 +12,11 @@
 
 #include "MutantStack.hpp"
 
-int main() {
+int main()
+{
 
-	MutantStack<int>	myStack;
-	MutantStack<int>	otherStack(myStack);
+	MutantStack<int> myStack;
+	MutantStack<int> otherStack(myStack);
 
 	(otherStack.empty()) ? std::cout << "empty: true" << std::endl : std::cout << "empty: false" << std::endl;
 
@@ -55,17 +56,17 @@ int main() {
 
 	MutantStack<int>::iterator it = myStack.begin();
 	MutantStack<int>::iterator ite = myStack.end();
-	
+
 	++it;
 	--it;
-	
+
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
 		++it;
 	}
-	
+
 	std::stack<int> s(myStack);
-	
-    return 0;
+
+	return 0;
 }
