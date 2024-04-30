@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:20:01 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/25 20:12:06 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:37:43 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ std::vector<int> Span::vget() const
 std::ostream &operator<<(std::ostream &out, const Span &v)
 {
 	std::vector<int> myVector = v.vget();
-	for (std::vector<int>::iterator it = myVector.begin(); it != myVector.end(); it++)
-		out << *it << std::endl;
+	// for (std::vector<int>::iterator it = myVector.begin(); it != myVector.end(); it++)
+	// 	out << *it << std::endl;
 	return out;
 }
